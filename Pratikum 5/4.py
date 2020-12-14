@@ -1,0 +1,2 @@
+soalanjim = input()
+print(soalanjim)
