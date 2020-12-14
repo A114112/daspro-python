@@ -5,21 +5,14 @@ def percentageDna(x, y):
     x = toList(x)
     y = toList(y)
     l = len(x) if len(x) <= len(y) else len(y)
-    
-    t = 0
-    for i in range(l):
-        if x[i] == y[i]:
-            t += 1
-    
+    t = sum(x[i] == y[i] for i in range(l))
     return t / l * 100
 
 def main():
     x = input('DNA Ayah: ')
     y = input('DNA Anak: ')
-    
     p = percentageDna(x, y)
     print(p)
-    
     if p >= 75:
         print('dia ayahku')
     else:
