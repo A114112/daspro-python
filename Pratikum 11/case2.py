@@ -1,10 +1,5 @@
 def average(val):
-    s = sum(val)
-    if s % 2 == 0:
-        r = sum(val) / len(val)
-    else:
-        r = sum(val) // len(val)
-    return r
+    return sum(val) // len(val)
 
 def median(val):
     items = len(val) 
@@ -18,19 +13,14 @@ def median(val):
     return median
 
 def main():
-    val = list(map(int, input().split(' ')))
-    #list
-    print(val)
-    # Jumlah
-    print(sum(val))
-    # Rata - rata
-    print(average(val))
-    # Median
-    print(median(val))
-    # Min
-    print(min(val))
-    #Max
-    print(max(val))
+    val = list(map(int, input().split()))
+    
+    print(val) # List
+    print(sum(val)) # Jumlah
+    print(average(val)) # Rata - rata
+    print(median(val)) # Median
+    print(min(val)) # Nilai minimum
+    print(max(val)) # Nilai maksimal
 
 if __name__ == "__main__":
     main()
