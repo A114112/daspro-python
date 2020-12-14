@@ -4,13 +4,14 @@ def toList(val):
 def percentageDna(x, y):
     x = toList(x)
     y = toList(y)
+    l = len(x) if len(x) <= len(y) else len(y)
     
     t = 0
-    for i in range(len(x)):
+    for i in range(l):
         if x[i] == y[i]:
             t += 1
     
-    return t / len(x) * 100
+    return t / l * 100
 
 def main():
     x = input('DNA Ayah: ')
