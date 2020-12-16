@@ -1,4 +1,5 @@
 def count(val):
+    val = filter(lambda x: x in range(1990, 2020), val)
     return sum(i % 2 == 1 for i in val)
 
 def main():
