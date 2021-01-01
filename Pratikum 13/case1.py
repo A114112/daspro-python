@@ -5,7 +5,7 @@ def score(val):
         return ['B', 3]
     elif val <= 69 and val >= 60:
         return ['C', 2]
-    elif val <= 50 and val >= 59:
+    elif val <= 59 and val >= 50:
         return ['D', 1]
     else:
         return ['E', 0]
@@ -31,12 +31,12 @@ def main():
     if lesson_total > 10:
         print('Tidak boleh melebihi 10')
         exit()
-    lessons = list()
+    lessons = [str] * lesson_total
     for i in range(lesson_total):
-        lessons.append(input())
-    scores = list()
+        lessons[i] = input()
+    scores = [int] * lesson_total
     for j in range(lesson_total):
-        scores.append(int(input()))
+        scores[j] = int(input())
     display(nim, name, lessons, scores)
     
 if __name__ == "__main__":
