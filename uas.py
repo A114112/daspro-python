@@ -33,12 +33,8 @@ def CekPenerimaBantuanListrik(daya, pulsa):
     # dan false jika tidak memenuhi
     # Cek deskripsi soal untuk syarat Penerima bantuan listrik
     # Isi dibawah ini, Bisa 4 sampai 8 baris kode, nilai 20
-    if daya >= 450 and daya <= 900 and pulsa >= 10000 and pulsa <= 50000:
-        return True
-    elif daya > 900 and pulsa >= 10000 and pulsa <= 50000:
-        return True
-    else:
-        return False
+    
+    return True if daya >= 450 and pulsa >= 10000 and pulsa <= 50000 else False
 
 def HitungTotalPembayaran(daya,pulsa):
     # Keadaan awal: daya dan pulsa
@@ -47,13 +43,8 @@ def HitungTotalPembayaran(daya,pulsa):
     # Jika memenuhi atau pulsa yang dibeli minimal 10000 maka total bayar menjadi gratis
     # Jika tidak, total bayar terdiri dari pulsa ditambah 3000
     # Isi dibawah ini, Bisa 5 sampai 10 baris kode, nilai 20
-    if CekPenerimaBantuanListrik(daya, pulsa) == False:
-        if daya > 0 and pulsa > 0:
-            return pulsa + 3000
-        else:
-            return 0
-    else:
-        return 0
+    
+    return pulsa + 3000 if CekPenerimaBantuanListrik(daya, pulsa) == False and daya > 0 and pulsa > 0 else 0
 
 def DisplayPembayaran():
     # Berikut ada prosedur untuk menampilkan Nama, Batas daya dan total Bayar
@@ -71,7 +62,7 @@ def main():
     i = 0
 
     # Isikan data nama, daya, dan pulsa yang dibeli dan simpan pada variabel global
-    while i<n:
+    while i < n:
         nama = input()
         daya = int(input())
         pulsa = int(input())
@@ -80,9 +71,10 @@ def main():
         SimpanBatasDaya(daya)
         SimpanPembelianPulsa(pulsa)
 
-        i=i+1
+        i += 1
+
     # Tampilkan data semua orang dengan detil pembayaran yang ada
-    DisplayPembayaran()    
+    DisplayPembayaran()
 
 if __name__ == "__main__":
     main()
